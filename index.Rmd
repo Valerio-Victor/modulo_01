@@ -1,6 +1,6 @@
 --- 
-title: "INTRODUÇÃO À ANÁLISE DE VIABILIDADE FINANCEIRA DE PROJETOS DE HIDROGÊNIO"
-author: "**Autor**: _[**Prof. Victor Valerio**](http://lattes.cnpq.br/1989464933096922)_"
+title: "HIDROGÊNIO NO CONTEXTO DA TRANSIÇÃO ENERGÉTICA"
+author: "**Autor**: _[**Prof. Christian Jeremi Coronado Rodriguez**](http://lattes.cnpq.br/5213237888376188)_"
 date: "**Última Atualização**: `r format(Sys.Date(), '%d de %B de %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
