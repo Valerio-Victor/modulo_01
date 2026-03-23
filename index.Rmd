@@ -113,7 +113,7 @@ knitr::include_graphics(path = 'figura9.png')
 
 Assim como a maioria dos países, o Brasil possui um sistema interconectado que permite distribuir a energia elétrica em todo o território dependendo da geração em cada região assim como a correspondente carga.  Como exemplo, na Figura \@ref(fig:figura10) se apresenta o status do balanço de energia, segundo o Operador Nacional do Sistema, ONS [5] para o dia 05 de setembro de 2025 aonde pode se visualizar o balanço de energia elétrica nas principais regiões do pais.
 
-```{r figura10, echo=FALSE, message=FALSE, warning=FALSE, out.width="80%", fig.align='center', fig.cap=""}
+```{r figura10, echo=FALSE, message=FALSE, warning=FALSE, out.width="80%", fig.align='center', fig.cap="Exemplo de Balanço de energia para o Brasil. [5]"}
 
 knitr::include_graphics(path = 'figura10.png')
 
