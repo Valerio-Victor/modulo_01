@@ -5,6 +5,8 @@ fig:figura4
 fig:figura5
 fig:figura6
 fig:figura7
+fig:figura8
+fig:figura9
 matriz-elétrica-e-energética-nacional-e-mundial
 consumo-final-de-energia-na-indústria
 consumo-final-de-energia-no-transporte

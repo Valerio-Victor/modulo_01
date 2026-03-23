@@ -93,15 +93,31 @@ knitr::include_graphics(path = 'figura7.png')
 
 ```
 
+Na Figura \@ref(fig:figura8) se apresenta a capacidade instalada das fontes no parque gerador em MW. Enquanto a hidrelétrica, térmica e nucelar se mantiveram praticamente constantes, a energia eólica teve um aumento de 3% e a solar 28,1%. A capacidade da energia solar no final de 2024 foi de 48468 MW [1] e até junho de 2025 esta capacidade foi de 54898 MW [4]. 
+
+```{r figura8, echo=FALSE, message=FALSE, warning=FALSE, out.width="100%", fig.align='center', fig.cap="Capacidade instalada das fontes no parque gerador. [1]"}
+
+knitr::include_graphics(path = 'figura8.png')
+
+```
 
 
+Já na Figura \@ref(fig:figura9) se apresenta a capacidade instalada da mini e micro geração distribuída e o seu crescimento nos últimos 05 anos. A saber: Microgeração: Potência ≤ 75 kW (Alterada pela Resolução 687/15); Minigeração: Potência instalada superior a 75 kW e inferior a 3MW para fontes hidricas ou menor e igual a 5MW para cogeração Qualificada (Alterada pela Resolução Normativa nº 687/15). 
 
 
+```{r figura9, echo=FALSE, message=FALSE, warning=FALSE, out.width="100%", fig.align='center', fig.cap="Capacidade instalada da mini e micro geração distribuída e o seu crescimento nos últimos 05 anos. [1]"}
 
+knitr::include_graphics(path = 'figura9.png')
 
+```
 
+Assim como a maioria dos países, o Brasil possui um sistema interconectado que permite distribuir a energia elétrica em todo o território dependendo da geração em cada região assim como a correspondente carga.  Como exemplo, na Figura \@ref(fig:figura10) se apresenta o status do balanço de energia, segundo o Operador Nacional do Sistema, ONS [5] para o dia 05 de setembro de 2025 aonde pode se visualizar o balanço de energia elétrica nas principais regiões do pais.
 
+```{r figura10, echo=FALSE, message=FALSE, warning=FALSE, out.width="80%", fig.align='center', fig.cap=""}
 
+knitr::include_graphics(path = 'figura10.png')
+
+```
 
 
 
