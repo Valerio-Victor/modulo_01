@@ -32,6 +32,15 @@ fig:figura30
 fig:figura31
 fig:figura32
 fig:figura33
+fig:figura34
+tab:tabela2
+fig:figura35
+fig:figura36
+tab:tabela3
+tab:tabela4
+tab:tabela5
+tab:tabela6
+tab:tabela7
 matriz-elétrica-e-energética-nacional-e-mundial
 consumo-final-de-energia-na-indústria
 consumo-final-de-energia-no-transporte
@@ -54,3 +63,7 @@ o-armazenamento-subterrâneo-de-energia-térmica-underground-thermal-energy-stor
 sistemas-de-armazenamento-de-energia-elétrica
 sistemas-de-armazenamento-de-energia-eletroquímica-electro---chemical-energy-storage-systems---eces
 sistema-de-armazenamento-de-energia-de-hidrogênio-h₂-como-vector-energético
+resumo-das-propriedades-específicas-do-h₂
+propriedades-físicas-do-h₂
+propriedades-químicas-do-h₂
+resumo-e-conslusões-das-propriedades-do-h₂

@@ -38,11 +38,12 @@ Para cada TEP disponibilizado, o Brasil emitiu em 2022 o equivalente a 71% das e
 O aumento da oferta interna de energia foi marcado pelo aumento da oferta interna de biomassa, eólica e solar, associado à queda de petróleo e derivados, proporcionando o patamar de 50% de renovabilidade, marco histórico desde o ano de 1990. A Figura \@ref(fig:figura1) mostra a participação das energias renováveis na oferta interna de energia brasileira. Do lado direito da figura se apresenta a evolução e renovabilidade da matriz brasileira desde 2015. Para mais detalhes acerca da repartição da oferta interna de energia em 2024, a Figura \@ref(fig:figura2) apresenta as fontes renováveis e não renováveis nesta repartição. Já na Figura \@ref(fig:figura3) se apresenta os detalhes em porcentagens das “outras energias renováveis” e embaixo a taxa de aumento comparando dois anos seguidos. Lembrando que a OCDE (Organização para a Cooperação e Desenvolvimento Econômico) é uma organização internacional com sede em Paris, que reúne os países mais desenvolvidos do mundo para discutir e implementar políticas econômicas e sociais que visam o desenvolvimento econômico, bem-estar social e economia de mercado.
 
 
-```{r figura1, echo=FALSE, message=FALSE, warning=FALSE, out.width="200%", fig.align='center', fig.cap="Participação das energias renováveis na oferta interna de energia brasileira. [1], [2]"}
+```{r figura1, echo=FALSE, message=FALSE, warning=FALSE, out.width="100%", fig.align='center', fig.cap="Participação das energias renováveis na oferta interna de energia brasileira. [1], [2]"}
 
 knitr::include_graphics(path = 'figura1.png')
 
 ```
+
 
 ```{r figura2, echo=FALSE, message=FALSE, warning=FALSE, out.width="100%", fig.align='center', fig.cap="Repartição da Oferta Interna de Energia - OIE 2024. [1]"}
 
@@ -378,9 +379,9 @@ param_tec <- data.frame(
                 'CP',
                 'CV',
                 'Coeficiente de difusão'),
-  valor = c('0,0899 kg/Nm3',
+  valor = c('0,0899 kg/Nm³',
             '0,0708 kg/L',
-            '10,8 MJ/Nm3',
+            '10,8 MJ/Nm³',
             '8,495 MJ/L',
             '20,28 K',
             '14,02 K',
@@ -463,11 +464,430 @@ knitr::include_graphics(path = 'figura32.png')
 
 Em resumo, a produção de H₂ de baixo conteúdo de carbono, a partir de excesso de energia renovável, irá permitir hoje em dia a produção de combustíveis sintéticos também chamados e-fuels. Desta forma pode-se perceber como o H₂ é na atualidade o novo vetor energético cujo desenvolvimento permitirá atingir uma drástica redução nos gases contaminantes e nos gases efeito estufa nas sociedades modernas.
 
-```{r figura33, echo=FALSE, message=FALSE, warning=FALSE, out.width="80%", fig.align='center', fig.cap="Produção de e-fuels a partir da produção de H2 renovável. [44]"}
+```{r figura33, echo=FALSE, message=FALSE, warning=FALSE, out.width="80%", fig.align='center', fig.cap="Produção de e-fuels a partir da produção de H₂ renovável. [44]"}
 
 knitr::include_graphics(path = 'figura33.png')
 
 ```
+
+# RESUMO DAS PROPRIEDADES ESPECÍFICAS DO H₂
+
+## Propriedades Físicas do H₂
+
+- **Massa específica do gás**
+
+  - Depende da pressão e da temperatura, $\rho = \frac{p}{R \cdot T}$. $R = \frac{8{,}314}{2}\ \frac{\text{kJ}}{\text{kmol}\cdot \text{K}} = 4{,}157\ \frac{\text{kJ}}{\text{kg}\cdot \text{K}}$ (do Hidrogênio). 
+
+  - Massa específica do H₂ a 1 bar y 25 °C é 0,0807 kg/m³, o que seria 12392 litros/kg. Na Figura \@ref(fig:figura34) se apresenta uma comparação.
+  
+  - Massa específica do H₂ em condições críticas: A -240 °C e 13 bar tem-se 31,2 kg/m³
+  
+  - A massa especifica como líquido: 70,8 kg/m³, ou seja, 14,1 litros/kg
+  
+```{r figura34, echo=FALSE, message=FALSE, warning=FALSE, out.width="80%", fig.align='center', fig.cap="Massa especifica do H₂ e outros gases. [46]"}
+
+knitr::include_graphics(path = 'figura34.png')
+
+```
+
+
+  - Uma comparação do R em relação a outros gases pode ser observada na Tabela \@ref(tab:tabela2) abaixo.
+
+```{r tabela2, echo=FALSE, message=FALSE, warning=FALSE, tab.cap="Comparação do H₂ em Relação a Outros Gases"}
+library(magrittr, include.only = '%>%')
+library(gt)
+
+param_tec <- data.frame(
+  
+  parametro = c('Ar',
+                'Metano',
+                'Propano',
+                'Etanol'),
+  valor = c('0,286 kJ/kg . K',
+            '0,519 kJ/kg . K',
+            '0,189 kJ/kg .  K',
+            '0,1386 kJ/kg .  K'))
+
+param_tec %>%
+  gt(caption = 'Comparação do H₂ em Relação a Outros Gases') %>%
+  cols_label(
+    parametro = "Parâmetro",
+    valor = "R",
+  ) %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#2e7d32"),
+      cell_text(color = "#e8f5e9", weight = "bold")
+    ),
+    locations = cells_column_labels()
+  ) 
+
+
+```
+
+
+  - A massa específica do H₂ gasoso e líquido não é linear com a temperatura, como mostrado na Figura \@ref(fig:figura35).
+  
+```{r figura35, echo=FALSE, message=FALSE, warning=FALSE, out.width="70%", fig.align='center', fig.cap="Massa especifica como gás e como liquido do H₂. [46]"}
+
+knitr::include_graphics(path = 'figura35.png')
+
+```
+
+- **Mudança de fase**
+
+  - Ponto crítico:
+  
+    - T°: -240 °C (33 K)
+    - Pressão: 13 bar (1,3 MPa)
+    
+  - Temperatura de mudança de fase:
+  
+    - Condensação (1 atm): - 253 °C
+    - Solidificação: -259 °C
+    
+  - Calor latente:
+
+    - De condensação: 447 kJ/kg
+    - De fusão: 58 kJ/kg
+    
+- **Viscosidade**
+
+  - Viscosidade Dinâmica a 25°C (1 atm): 0,00892 centipoise = 8,92 (10-6) Pa. S
+  
+  - Outros gases:           
+    
+    - Ar: 17,2 (10-6) Pa. S
+    
+    - Metano: 11,0 (10-6) Pa. S
+
+```{r figura36, echo=FALSE, message=FALSE, warning=FALSE, out.width="100%", fig.align='center', fig.cap="Diagrama Temperatura vs Entropia do H₂. [46]"}
+
+knitr::include_graphics(path = 'figura36.png')
+
+```
+
+- **Calor especifico e Condutividade térmica**
+
+  - R = CP – CV = 8,314 / PM = 8,314 / 2 = 4,157 kJ/kg K
+  
+  - A pressão constante (CP):
+    
+    - Gás a 25°C:   14,421  kJ/kg K
+    
+    - Líquido a -256 °C:   8,10 kJ/kg K
+  
+  - A volume cte (Cv):
+  
+    - Gás a 25 °C: 10,264 kJ/kg K
+    
+  - Condutividade térmica (a 25°C): 0,19 W/mK
+    
+    - Outros gases: Metano (0,034 W/mK); Ar (0,026 W/mK)
+
+```{r tabela3, echo=FALSE, message=FALSE, warning=FALSE, tab.cap="Incremento da temperatura de 1 kg ao receber 1 kJ de energia (a pressão cte). [46]"}
+library(magrittr, include.only = '%>%')
+library(gt)
+
+param_tec <- data.frame(
+  
+  parametro = c('Ar',
+                'Metano',
+                'Hidrogênio'),
+  cp = c('1,007',
+         '2,26',
+         '14,421'),
+  delta = c('0,993',
+            '0,442',
+            '0,069'))
+
+param_tec %>%
+  gt(caption = 'Incremento da temperatura de 1 kg ao receber 1 kJ de energia (a pressão cte). [46]') %>%
+  cols_label(
+    parametro = "Parâmetro",
+    cp = "CP (kJ/kg K)",
+    delta = "Variação de T"
+  ) %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#2e7d32"),
+      cell_text(color = "#e8f5e9", weight = "bold")
+    ),
+    locations = cells_column_labels()
+  ) 
+
+
+```
+
+- **Difusividade**
+
+  - Conceito: Mede a capacidade de expansão em um recinto fechado quando misturado com o ar a partir de um ponto inicial de escape.
+  
+    - Coeficiente de difusividade: fluxo através de uma área unitária por segundo.
+    
+    - Seu valor é a área de uma superfície esférica que se desloca a partir de um ponto infinitesimal onde uma massa está inicialmente concentrada. Portanto, a área é medida por unidade de tempo (cm²/s).
+    
+    - O H₂ difunde-se muito rapidamente em um determinado volume. Ele pode percorrer longas distâncias em pouco tempo. Sua concentração diminui rapidamente em áreas próximas a um vazamento. Ele pode vazar através de     rachaduras e por ação capilar
+    
+  - Incremento da Temperatura de 1 kg ao receber 1 kJ de energia (a pressão cte) [46]:
+  
+    - Coef. de difusividade no ar (cm2/s) do $\text{H}_2$ = 0,61
+    
+    - Coef. de difusividade no ar (cm2/s) do $\text{CH}_4$ = 0,16
+    
+    - Coef. de difusividade no ar (cm2/s) do $\text{C}_2\text{H}_5\text{OH}$ = 0,123
+    
+    - Coef. de difusividade no ar (cm2/s) da $Gasolina$ = 0,05
+
+- **Flutuabilidade no ar**
+
+  - Tendência de uma fuga ascender na atmosfera. $Força \ ascendente = peso \ do \ volume \ desalojado – peso \ do \ gás$.
+
+```{r tabela4, echo=FALSE, message=FALSE, warning=FALSE, tab.cap="Massa de 1 m³ de gas removido. [46]"}
+library(magrittr, include.only = '%>%')
+library(gt)
+
+param_tec <- data.frame(
+  
+  propriedade = c('Massa de 1 m³ de gas',
+                'Força ascendente (N)'),
+  h2 = c('0,086',
+         '10,16'),
+  metano = c('0,620',
+            '4,93'),
+  propano = c('1,704',
+              '-5,68'))
+
+param_tec %>%
+  gt(caption = 'Massa de 1 m³ de gas removido. [46]') %>%
+  cols_label(
+    propriedade = "(25 °C, 1 bar)",
+    h2 = "H₂",
+    metano = "Metano",
+    propano = "Propano"
+  ) %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#2e7d32"),
+      cell_text(color = "#e8f5e9", weight = "bold")
+    ),
+    locations = cells_column_labels()
+  ) 
+
+
+```
+
+  
+  - Uma fuga de H₂ tende a ascender:
+
+    - Se não há teto: se dispersa na atmosfera
+
+    - Se há teto: se concentra na parte superior, precisa ventilação
+
+## Propriedades Químicas do H₂
+
+- **Toxicidade**
+  -	Na forma de gás puro: Não é tóxico e não apresenta riscos à saúde.
+  -	O problema é o deslocamento do ar (sem O2), asfixia.
+  -	Cor, sabor e cheiro: Gás incolor, insípido e inodoro
+
+- **Solubilidade e fragilização**
+  
+  -	Solubilidade em metais: aumenta a fragilidade e reduz a tenacidade.
+  
+  -	Fragilização de aços com H2: No interior do aço, promove a descarbonização, formando bolhas de metano. O surgimento de bolhas ocorre devido a uma reação com ligas metálicas e favorece a formação de trincas.
+  
+  -	Solubilidade em água: É muito menor do que a de outros gases.
+  
+    - Gramas dissolvidos em 100 g de agua a 1 atm do Hidrogênio: 0,00016
+    
+    - Gramas dissolvidos em 100 g de agua a 1 atm do Metano: 0,0023
+    
+    - Gramas dissolvidos em 100 g de agua a 1 atm do Oxigênio: 0,0043
+    
+## Resumo e conslusões das propriedades do H₂
+
+- O H₂ é o átomo mais abundante na terra (e no universo)
+
+- Em estado molecular deve ser produzido
+
+- Suas propriedades físicas e químicas são bastante diferentes a outros gases
+
+- **Vantagens**
+  - Elevada energia por unidade de massa
+  
+  - Flutuabilidade
+  
+  - Fácil de obter da agua e de hidrocarbonetos
+  
+  - Apropriado para combustão e células de combustíveis
+
+- **Desvantagens**
+    - Baixa densidade em estado gasoso
+    
+    - Baixíssima temperatura de condensação
+    
+    - Solubilidade em metais e fragilização
+
+A seguir as Tabelas \@ref(tab:tabela5) a \@ref(tab:tabela7) se apresenta o resumo das principais propriedades especificas
+
+
+```{r tabela5, echo=FALSE, message=FALSE, warning=FALSE, tab.cap="Comparação de propriedades características entre combustíveis. [46]"}
+library(magrittr, include.only = '%>%')
+library(gt)
+
+param_comb <- data.frame(
+  
+  propriedade = c('T° de Autoignição',
+                  'Energia de Autoignição no Ar',
+                  'T° de chama no ar',
+                  'Limite Inferior de Inflamabilidade',
+                  'Limite Superior de Inflamabilidade',
+                  'Ponto de ebulição (1 atm)'),
+  h2 = c('585 °C',
+         '0,02 mJ',
+         '2045 °C',
+         '4 %',
+         '74 %',
+         '(-252 °C)'),
+  gasolina = c('257 °C',
+               '0,24 mJ',
+               '2197 °C',
+               '1,4 %',
+               '7,6 %',
+               'De 25 a 225 °C'),
+  gasolina_baixo_enxofre = c('249 °C',
+                            'N/A',
+                            'N/A',
+                            '0,60 %',
+                            '5,50 %',
+                            'De 180 a 345 °C'),
+  metano = c('539 °C',
+             '0,296 mJ',
+             '2112 °C',
+             '5 %',
+             '15 %',
+             '(-162 °C)')
+)
+
+param_comb %>%
+  gt(caption = 'Comparação de propriedades características entre combustíveis. [46]') %>%
+  cols_label(
+    propriedade = "",
+    h2 = "H₂",
+    gasolina = "Gasolina",
+    gasolina_baixo_enxofre = "Gasolina com baixo enxofre",
+    metano = "Metano (GNC)"
+  ) %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#2e7d32"),
+      cell_text(color = "#e8f5e9", weight = "bold")
+    ),
+    locations = cells_column_labels()
+  )
+
+```
+
+```{r tabela6, echo=FALSE, message=FALSE, warning=FALSE, tab.cap="Energia liberada por unidade de massa em uma reação completa com o ar. [46]"}
+library(magrittr, include.only = '%>%')
+library(gt)
+
+param_energia <- data.frame(
+  
+  propriedade = c('kJ por unidade de massa (kg)',
+                  'kWh por unidade de massa (kg)',
+                  'kJ por unidade de volume do gás em CNTP (dm3)',
+                  'kJ por unidade de volume líquido (dm3)'),
+  hidrogenio = c('119970',
+                 '33,33',
+                 '9943',
+                 '8398'),
+  metano = c('50000',
+             '13,87',
+             '35709',
+             '21150'),
+  gasolina = c('43500',
+               '11,86',
+               '-',
+               '31973')
+)
+
+param_energia %>%
+  gt(caption = 'Energia liberada por unidade de massa em uma reação completa com o ar. [46]') %>%
+  cols_label(
+    propriedade = "",
+    hidrogenio = "Hidrogênio",
+    metano = "Metano",
+    gasolina = "Gasolina"
+  ) %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#2e7d32"),
+      cell_text(color = "#e8f5e9", weight = "bold")
+    ),
+    locations = cells_column_labels()
+  )
+
+```
+
+```{r tabela7, echo=FALSE, message=FALSE, warning=FALSE, tab.cap="Propriedades energéticas do H₂. [46]"}
+library(magrittr, include.only = '%>%')
+library(gt)
+
+param_comp <- data.frame(
+  
+  propriedade = c('Composição (% vol)',
+                  'Razão ar/combustível',
+                  'PCI (MJ/kg)',
+                  'Número de octano',
+                  'Massa específica a 20°C (kg/m³)',
+                  'Temperatura de chama adiabática (°C)'),
+  gnv = c('CH4 – 88.5 %
+C2H6 – 6.2 %
+C3H8 – 2.2 %
+C4H10 – 0.8 %
+CO2 – 1.8 %
+N2 – 0.5 %',
+          '16,08',
+          '47,053',
+          '120',
+          '0,65 - 0,8',
+          '~ 1945'),
+  biogas = c('CH4 – 64,7 %
+
+CO2 – 35,3 %',
+             '6,94',
+             '20,19',
+             '130',
+             '0,78',
+             '~1872 - 1926'),
+  hidrogenio = c('H₂ – 100 %',
+                 '34',
+                 '120',
+                 '-',
+                 '0,082',
+                 '~ 2250')
+)
+
+param_comp %>%
+  gt(caption = 'Propriedades energéticas do H₂ [46]') %>%
+  cols_label(
+    propriedade = "",
+    gnv = "GNV",
+    biogas = "Biogás",
+    hidrogenio = "Hidrogênio"
+  ) %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#2e7d32"),
+      cell_text(color = "#e8f5e9", weight = "bold")
+    ),
+    locations = cells_column_labels()
+  )
+
+```
+
 
 # REFERÊNCIAS {-}
 
@@ -560,8 +980,7 @@ knitr::include_graphics(path = 'figura33.png')
 
 [45] Siemens Stiftung - Sitio web de la fundación Siemens Stiftung. Acessado em 26/10/2025. https://crea-portaldemedios.siemens-stiftung.org/view/101867
 
-
-
+[46] Don W. Green (Editor em chefe). Manual do Engenheiro Químico do Perry – 9th Ed. ISBN: 978-0-07-183409-4. McGraw-Hill Education. NY, USA. 2019.
 
 
 
